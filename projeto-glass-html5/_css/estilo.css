@@ -130,6 +130,18 @@ nav#menu a {
     padding-right: 15px;
  }
 
+table#tabelaSpac{
+    border: 1px solid #606060;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table#tabelaSpac td{
+   border: 1px solid #606060;
+   padding: 10px;
+}
+
  aside#lateral {
     display: block;
     width: 350px;
