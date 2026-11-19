@@ -32,7 +32,8 @@
                     <li onmousemove="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a
                             href="fotos.html">Fotos</a></li>
                     <li onmousemove="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')">
-                        <a href="multimidia.html">Multimídia</a></li>
+                        <a href="multimidia.html">Multimídia</a>
+                    </li>
                     <li onmousemove="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a
                             href="fale-conosco.html">Fale conosco</a></li>
                 </ul>
@@ -50,45 +51,97 @@
                     </hgroup>
                 </header>
 
-               <form action="">
-                <fieldset id="usuario">
-                <legend>Identificação do Usuário</legend>  
-                <p><label for="cNome"> Nome</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"></p>
-                <p><label for="cSenha">Senha</label>  <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígito"></p> 
-                <p><label for="cMail">E-mail</label>  <input type="email" name="tMail" id="cMail" size="20" maxlength="40"></p>
+                <form method="post" id="fContato" action="mailto:dackguitar43@gmail.com">
+                    <fieldset id="usuario">
+                        <legend>Identificação do Usuário</legend>
+                        <p><label for="cNome"> Nome</label> <input type="text" name="tNome" id="cNome" size="20"
+                                maxlength="30" placeholder="Nome Completo"></p>
+                        <p><label for="cSenha">Senha</label> <input type="password" name="tSenha" id="cSenha" size="8"
+                                maxlength="8" placeholder="8 dígito"></p>
+                        <p><label for="cMail">E-mail</label> <input type="email" name="tMail" id="cMail" size="20"
+                                maxlength="40"></p>
 
-                <fieldset id="sexo"> <legend>Sexo</legend>
-                   <input type="radio" name="tSexo" id="cMasc" checked/> <label for="cMasc">Masculino</label> <br>
-                   <input type="radio" name="tSexo" id="cFem" /> <label for="cFem">Feminino </label> 
-                 </fieldset> 
-                <p><label for="cNasc">Data de Nascimento</label>  <input type="date" name="tNasc" id="cNasc"></p> 
-                </fieldset>
-                
-                <fieldset id="endereco">
-                <legend>Endereço do Usuário</legend> 
-               <p><label for="cRua">Logradouro</label>  <input type="text" name="tRua" id="cRua" size="20" maxlength="80" placeholder="Rua, Av, Trav, ..."></p>
-               <p><label for="cNum">Número</label>  <input type="number" name="tNum" id="cNum" min="0" max="999999"></p>
-               <p> Estado <input type="text" name="t" id="c"></p>
-               <p> Cidade <input type="text" name="t" id="c"></p>
-                </fieldset>
-               
-                <fieldset id="mensagem">
-                <legend>Mensagem do Usuário</legend> 
-                Grau de Urgência:
-                Mensagem: 
-                </fieldset>
-                
-                <fieldset id="pedido">
-                <legend>Quero um Google Glass</legend> 
-                Gostaria de adquirir um Google Glass quando disponível
-                Cor:
-                Quantidade:
-                Preço Total: R$  
-                </fieldset>
-             
+                        <fieldset id="sexo">
+                            <legend>Sexo</legend>
+                            <input type="radio" name="tSexo" id="cMasc" checked /> <label for="cMasc">Masculino</label>
+                            <br>
+                            <input type="radio" name="tSexo" id="cFem" /> <label for="cFem">Feminino </label>
+                        </fieldset>
+                        <p><label for="cNasc">Data de Nascimento</label> <input type="date" name="tNasc" id="cNasc"></p>
+                    </fieldset>
+
+                    <fieldset id="endereco">
+                        <legend>Endereço do Usuário</legend>
+                        <p><label for="cRua">Logradouro</label>
+                            <input type="text" name="tRua" id="cRua" size="20" maxlength="80"
+                                placeholder="Rua, Av, Trav, ...">
+                        </p>
+                        <p><label for="cNum">Número</label>
+                            <input type="number" name="tNum" id="cNum" min="0" max="999999">
+                        </p>
+                        <p><label for="cEst">Estado</label>
+                            <select name="tEst" id="cEst">
+                                <optgroup label="Região Suldeste">
+                                    <option value="SP">São Paulo</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                </optgroup>
+                                <optgroup label="Região Sul">
+                                   <option value="RS">Rio Grande do Sul</option>
+                                   <option value="PR">Paraná</option>
+                                   <option value="SC">Santa Catarina</option>
+                                </optgroup>
+                                <optgroup label="Região Nordeste">
+                                    <option value="BA">Bahia</option>
+                                </optgroup>
+                                <optgroup label="Região Norte">
+                                    <option value="AM">Amazonas</option>
+                                </optgroup>
+                            
+                            </select>
+                        </p>
+                        <p><label for="cCid">Cidade </label>
+                            <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade...">
+                            <datalist id="cidade">
+                                <option value="São Paulo"></option>
+                                <option value="Guarulhos"></option>
+                                <option value="Campinas"></option>
+                                <option value="Salvador"></option>
+                                <option value="Feira de Santana"></option>
+                                <option value="Manus"></option>
+                                <option value="Parantins"></option>
+                                <option value="Belo Horizonte"></option>
+                                <option value="Porto Alegre"></option>
+                                <option value="Curitiba"></option>
+                                <option value="Londrina"></option>
+                                <option value="Joinvile"></option>
+                                <option value="Blumenau"></option>
+
+                            </datalist>
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="mensagem">
+                        <legend>Mensagem do Usuário</legend>
+                        <p><label for="cUrg">Grau de Urgência:</label>
+                         Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">Max
+                        </p>
+                        <p><label for="cMsg">Mensagem:</label>
+                        <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea>
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="pedido">
+                        <legend>Quero um Google Glass</legend>
+                        Gostaria de adquirir um Google Glass quando disponível
+                        Cor:
+                        Quantidade:
+                        Preço Total: R$
+                    </fieldset>
 
 
-                [BOTÃO ENVIAR]
+
+                    [BOTÃO ENVIAR]
                 </form>
 
                 <footer id="rodape">
